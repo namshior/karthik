@@ -1,1 +1,216 @@
 iam learning about git
+
+
+
+
+
+
+
+
+
+Sreyas@LAB1035 MINGW64 /c/srys
+$ git init
+Initialized empty Git repository in C:/srys/.git/
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ vim test.txt
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ cat test.txt
+this is first commit
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ git add .
+warning: in the working copy of 'test.txt', LF will be replaced by CRLF the next time Git touches it
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ git add test.txt
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   test.txt
+
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ git config --global user.email "namshiork4@gmail.com"
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ git config --global user.name "namshior"
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ git commit -m "MC1"
+[master (root-commit) 3626006] MC1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test.txt
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ git log --oneline
+3626006 (HEAD -> master) MC1
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ vim test.txt
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ cat test.txt
+this is first commit
+this is second commit
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ git commit -m "MC2"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ git add test.txt
+warning: in the working copy of 'test.txt', LF will be replaced by CRLF the next time Git touches it
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ git add .
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ git commit -m "MC2"
+[master 935084d] MC2
+ 1 file changed, 1 insertion(+)
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ git branch
+* master
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ git branch sreyas
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ git branch
+* master
+  sreyas
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ git checkout sreyas
+Switched to branch 'sreyas'
+
+Sreyas@LAB1035 MINGW64 /c/srys (sreyas)
+$ git branch
+  master
+* sreyas
+
+Sreyas@LAB1035 MINGW64 /c/srys (sreyas)
+$ ls
+test.txt
+
+Sreyas@LAB1035 MINGW64 /c/srys (sreyas)
+$ cat test.txt
+this is first commit
+this is second commit
+
+Sreyas@LAB1035 MINGW64 /c/srys (sreyas)
+$ vim test.txt
+
+Sreyas@LAB1035 MINGW64 /c/srys (sreyas)
+$ cat test.txt
+this is first commit
+this is second commit
+this is third commit
+
+Sreyas@LAB1035 MINGW64 /c/srys (sreyas)
+$ git add .
+warning: in the working copy of 'test.txt', LF will be replaced by CRLF the next time Git touches it
+
+Sreyas@LAB1035 MINGW64 /c/srys (sreyas)
+$ git add test.txt
+
+Sreyas@LAB1035 MINGW64 /c/srys (sreyas)
+$ git commit -m "FC1"
+[sreyas 26c0733] FC1
+ 1 file changed, 1 insertion(+)
+
+Sreyas@LAB1035 MINGW64 /c/srys (sreyas)
+$ git log --oneline
+26c0733 (HEAD -> sreyas) FC1
+935084d (master) MC2
+3626006 MC1
+
+Sreyas@LAB1035 MINGW64 /c/srys (sreyas)
+$ git checkout master
+Switched to branch 'master'
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ ls
+test.txt
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ cat test.txt
+this is first commit
+this is second commit
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ vim test.txt
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ git add .
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ git commit -m "MC3"
+[master 6fbc34f] MC3
+ 1 file changed, 1 insertion(+)
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ ls
+test.txt
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ cat test.txt
+this is first commit
+this is second commit
+this is third commit
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ git merge sreyas
+Merge made by the 'ort' strategy.
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ git branch
+* master
+  sreyas
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ git merge sreyas
+Already up to date.
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ cat test.txt
+this is first commit
+this is second commit
+this is third commit
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ git merge sreyas
+Already up to date.
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ git log --oneline --graph
+*   86096d7 (HEAD -> master) Merge branch 'sreyas'
+|\
+| * 26c0733 (sreyas) FC1
+* | 6fbc34f MC3
+|/
+* 935084d MC2
+* 3626006 MC1
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$ git branch
+* master
+  sreyas
+
+Sreyas@LAB1035 MINGW64 /c/srys (master)
+$
